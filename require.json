@@ -1,0 +1,7 @@
+
+        "name": "login"
+        , "endpoint": "login.php"
+        , "desc": "login to a user account"
+        , "requires": ["user_name", "email"]
+    }, {
+   

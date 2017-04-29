@@ -9,20 +9,26 @@
 
 <body>
     <header class="bar bar-nav">
-        <h1 class="title">Title</h1>
+        <h1 class="title">Notes</h1>
     </header>
     <div class='content'>
+        <input type="date" id="inputDate" placeholder="yyyy-mm-dd" />
+        <ul>
+            <div class="card">
+                <li>symptoms</li>
+            </div>
+            <div class="card">
+                <li>sex</li>
+            </div>
 
-        <ul class="table-view">
-            <li class="table-view-cell">Pregnact risk</li>
-            <li class="table-view-divider">Divider</li>
-            <li class="table-view-cell table-view-cell">STI Risk</li>
-            <li class="table-view-divider">Divider</li>
-            <li class="table-view-cell">Contraception Alert</li>
-            <li class="table-view-divider">Divider</li>
+            <div class="card">
+                <li>mood</li>
+            </div>
 
+            <div class="card">
+                <li>personal</li>
+            </div>
         </ul>
-
         <nav class="bar bar-tab">
             <a class="tab-item" href="#">
                 <span class="icon icon-info"></span>
@@ -46,6 +52,12 @@
                 <span class="tab-label">Connect</span>
             </a>
         </nav>
+        <div id="Notes" class="modal">
+            <header class="bar bar-nav">
+                <h1 class="title">Symptoms</h1>
+            </header>
+        </div>
+
     </div>
     <script type="text/javascript" src="./js/ratchet.js"></script>
 </body>

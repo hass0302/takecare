@@ -12,8 +12,7 @@
     <div class='content'>
         <header class="bar bar-nav">
             <button class="btn btn-link btn-nav pull-left">
-                <span class="icon icon-left-nav"></span>
-                Previous
+                <span class="icon icon-left-nav"></span> Previous
             </button>
             <h1 class="title">Questionnaire</h1>
         </header>
@@ -56,6 +55,28 @@
         </nav>
     </div>
     <script type="text/javascript" src="../js/ratchet.js"></script>
+    <script>
+        let data;
+        let buttons = document.getElementsByTagName("button");
+        for (let i = 0; i < buttons.length; i++) {
+            buttons[i].addEventListener("click", function() {
+                // localStorage.clear();
+                if (!localStorage.getItem('hass0302')) {
+                    console.log("no previous data");
+                    data = {};
+                } else {
+                    data = JSON.parse(localStorage.getItem('hass0302'));
+                }
+                let value = buttons[i].getAttribute('value');
+                console.log(value);
+                data.q6 = value;
+                console.dir(data);
+                localStorage.setItem('hass0302', JSON.stringify(data));
+                window.location.href = "questionnaire-q7.html";
+            });
+        };
+
+    </script>
 </body>
 
 </html>

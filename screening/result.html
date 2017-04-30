@@ -16,14 +16,7 @@
         <button class="btn btn-link btn-nav pull-left"> <span class="icon icon-left-nav"></span>Back</button>
         <h1 class="title">Questionnaire</h1> </header>
     <div class='content'>
-        <center>
-            <h5>1 of 18</h5> </center>
-        <div>
-            <p>Within the past 6 months, have you had any sexual contact?</p>
-        </div>
-        <button class="btn btn-block btn-primary" value=0>NO</button>
-        <button class="btn btn-block btn-positive" value=1>YES, ONCE OR TWICE</button>
-        <button class="btn btn-block btn-negative" value=2>YES, MANY</button>
+
     </div>
     <nav class="bar bar-tab">
         <a class="tab-item active" data-ignore="push" href="../index.html"> <span class="icon icon-home"></span> <span class="tab-label">Home</span> </a>
@@ -33,27 +26,19 @@
         <a class="tab-item" href="#"> <span class="icon icon-gear"></span> <span class="tab-label">Settings</span> </a>
     </nav>
     <script type="text/javascript" src="../js/ratchet.js"></script>
-<script>
-    let data;
-    let buttons = document.getElementsByTagName("button");
-    for (let i = 0; i < buttons.length; i++) {
-        buttons[i].addEventListener("click", function() {
-            // localStorage.clear();
-            if (!localStorage.getItem('hass0302')) {
-                console.log("no previous data");
-                data = {};
-            } else {
-                data = JSON.parse(localStorage.getItem('hass0302'));
-            }
-            let value = buttons[i].getAttribute('value');
-            console.log(value);
-            data.q1 = value;
-            console.dir(data);
-            localStorage.setItem('hass0302', JSON.stringify(data));
-            window.location.href = "questionnaire-q2.html";
-        });
-    };
-</script>
+    <script>
+        let data;
+        let buttons = document.getElementsByTagName("button");
+
+        if (!localStorage.getItem('hass0302')) {
+            console.log("no previous data");
+            data = {};
+        } else {
+            data = JSON.parse(localStorage.getItem('hass0302'));
+        }
+        console.dir(data);
+
+    </script>
 </body>
 
 </html>

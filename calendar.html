@@ -5,24 +5,13 @@
     <meta charset="UTF-8">
     <title>Document</title>
     <link rel="stylesheet" type="text/css" href="./css/ratchet.css">
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.min.css">
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.print.css">
 </head>
 
 <body>
-    <header class="bar bar-nav">
-        <h1 class="title">Title</h1>
-    </header>
     <div class='content'>
-
-        <ul class="table-view">
-            <li class="table-view-cell">Pregnancy Risk</li>
-            <li class="table-view-divider">Divider</li>
-            <li class="table-view-cell table-view-cell">STI Risk</li>
-            <li class="table-view-divider">Divider</li>
-            <li class="table-view-cell">Contraception Alert</li>
-            <li class="table-view-divider">Divider</li>
-
-        </ul>
-
+        <div id='calendar'></div>
         <nav class="bar bar-tab">
             <a class="tab-item" href="#">
                 <span class="icon icon-info"></span>
@@ -32,12 +21,12 @@
                 <span class="icon icon-compose"></span>
                 <span class="tab-label">Journal</span>
             </a>
-            <a class="tab-item active" href="index.html">
+            <a class="tab-item " href="index.html">
                 <span class="icon icon-home"></span>
                 <span class="tab-label">Home</span>
             </a>
 
-            <a class="tab-item" href="calendar.html">
+            <a class="tab-item active" href="calendar.html">
                 <span class="icon icon-gear"></span>
                 <span class="tab-label">Calendar</span>
             </a>
@@ -47,7 +36,24 @@
             </a>
         </nav>
     </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js
+"></script>
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.min.js"></script>
+
     <script type="text/javascript" src="./js/ratchet.js"></script>
+    <script>
+        $(document).ready(function() {
+
+            // page is now ready, initialize the calendar...
+
+            $('#calendar').fullCalendar({
+                // put your options and callbacks here
+            })
+
+        });
+
+    </script>
 </body>
 
 </html>

@@ -9,24 +9,20 @@
 
 <body>
     <header class="bar bar-nav">
+        <a class="btn btn-link btn-nav pull-left" href="#Notes">
+        Modal Test</a>
         <h1 class="title">Notes</h1>
     </header>
     <div class='content'>
         <input type="date" id="inputDate" placeholder="yyyy-mm-dd" />
         <ul>
             <div class="card">
-                <li>symptoms</li>
-            </div>
-            <div class="card">
-                <li>sex</li>
+                <li><a class="btn btn-primary btn-block" href="#Symptoms">
+                    symptoms</a></li>
             </div>
 
             <div class="card">
-                <li>mood</li>
-            </div>
-
-            <div class="card">
-                <li>personal</li>
+                <li><a class="tab-item active" href="#Notes">personal</a></li>
             </div>
         </ul>
         <nav class="bar bar-tab">
@@ -34,16 +30,16 @@
                 <span class="icon icon-info"></span>
                 <span class="tab-label">Info</span>
             </a>
-            <a class="tab-item" href="#">
+            <a class="tab-item active" href="notes.html">
                 <span class="icon icon-compose"></span>
                 <span class="tab-label">Journal</span>
             </a>
-            <a class="tab-item active" href="#">
+            <a class="tab-item" href="index.html">
                 <span class="icon icon-home"></span>
                 <span class="tab-label">Home</span>
             </a>
 
-            <a class="tab-item" href="#">
+            <a class="tab-item" href="calendar.html">
                 <span class="icon icon-gear"></span>
                 <span class="tab-label">Calendar</span>
             </a>
@@ -52,12 +48,68 @@
                 <span class="tab-label">Connect</span>
             </a>
         </nav>
-        <div id="Notes" class="modal">
-            <header class="bar bar-nav">
-                <h1 class="title">Symptoms</h1>
-            </header>
-        </div>
+    </div>
 
+    <div id="Symptoms" class="modal">
+        <header class="bar bar-nav">
+            <a class="btn btn-link btn-nav pull-left" href="#Symptoms">
+                <span class="icon icon-left-nav"></span>Back</a>
+            <h1 class="title">Symptoms</h1>
+        </header>
+        <div class="content">
+            <ul class="table-view">
+                <li class="table-view-cell">Vaginal bleeding after intercourse or between menstrual periods
+                    <input type="checkbox" class="pull-right">
+                </li>
+                <li class="table-view-cell">Vaginal discharge
+                    <input type="checkbox" class="pull-right">
+
+                </li>
+                <li class="table-view-cell">Pain in the abdomen or in the lower back
+                    <input type="checkbox" class="pull-right">
+                </li>
+                <li class="table-view-cell">Pain during intercourse
+                    <input type="checkbox" class="pull-right">
+                </li>
+                <li class="table-view-cell">Pain or burning while urinating
+                    <input type="checkbox" class="pull-right">
+                </li>
+                <li class="table-view-cell">Pain, itching, bleeding, and/or mucus discharge of the rectum
+                    <input type="checkbox" class="pull-right">
+                </li>
+                <li class="table-view-cell">Redness, itching, and/or discharges of the eyes
+                    <input type="checkbox" class="pull-right">
+                </li>
+                <li class="table-view-cell">Sore throat, cough, swollen lymph nodes, and/or fever
+                    <input type="checkbox" class="pull-right">
+                </li>
+                <li class="table-view-cell">Itchy urethra
+                    <input type="checkbox" class="pull-right">
+                </li>
+                <li class="table-view-cell">Clear, watery or milky discharge from the penis
+                    <input type="checkbox" class="pull-right">
+                </li>
+                <li class="table-view-cell">Testicular pain or swelling
+                    <input type="checkbox" class="pull-right">
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="Notes" class="modal">
+        <header class="bar bar-nav">
+            <a class="btn btn-link btn-nav pull-left" href="#Notes">
+                <span class="icon icon-left-nav"></span> Back
+            </a>
+            <h1 class="title">personal Notes</h1>
+        </header>
+        <div class="content">
+            <canvas id="myCanvas" width="200" height="200" style="border-radius: 10px;
+margin-top: 10px; border: 1px solid lightgray; float:left; margin-left:25%"></canvas>
+            <textarea style="margin-top: 10px;" rows="10" placeholder="Any personal notes will be added here."></textarea>
+            <button class="btn btn-primary btn-block ">Add Photo</button>
+            <button class="btn btn-positive btn-block">Save</button>
+        </div>
     </div>
     <script type="text/javascript" src="./js/ratchet.js"></script>
 </body>

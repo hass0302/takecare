@@ -3,51 +3,68 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Document</title>
-    <link rel="stylesheet" type="text/css" href="./css/ratchet.css">
+    <!-- Sets initial viewport load and disables zooming  -->
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <!-- Makes your prototype chrome-less once bookmarked to your phone's home screen -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>Questionnaire</title>
+    <link rel="stylesheet" type="text/css" href="../css/ratchet.css">
+    <link rel="stylesheet" type="text/css" href="../css/question.css">
+
 </head>
+<style>
+    .content {
+        padding-top: -500px;
+    }
+
+</style>
 
 <body>
     <header class="bar bar-nav">
-        <h1 class="title">Title</h1>
-    </header>
+        <h1 class="title">Welcome</h1> </header>
     <div class='content'>
-
-        <ul class="table-view">
-            <li class="table-view-cell">Pregnancy Risk</li>
-            <li class="table-view-divider">Divider</li>
-            <li class="table-view-cell table-view-cell">STI Risk</li>
-            <li class="table-view-divider">Divider</li>
-            <li class="table-view-cell">Contraception Alert</li>
-            <li class="table-view-divider">Divider</li>
-
-        </ul>
-
-        <nav class="bar bar-tab">
-            <a class="tab-item" href="#">
-                <span class="icon icon-info"></span>
-                <span class="tab-label">Info</span>
-            </a>
-            <a class="tab-item" href="notes.html">
-                <span class="icon icon-compose"></span>
-                <span class="tab-label">Journal</span>
-            </a>
-            <a class="tab-item active" href="index.html">
-                <span class="icon icon-home"></span>
-                <span class="tab-label">Home</span>
-            </a>
-
-            <a class="tab-item" href="calendar.html">
-                <span class="icon icon-gear"></span>
-                <span class="tab-label">Calendar</span>
-            </a>
-            <a class="tab-item" href="#">
-                <span class="icon icon-person"></span>
-                <span class="tab-label">Connect</span>
-            </a>
-        </nav>
+        <button class="btn btn-block btn-outline" onclick="window.location.href='./screening/questionnaire-q1.html'">Take the Quiz</button>
+        <button class="btn btn-block btn-outline">Find a Clinic</button>
+        <button class="btn btn-block btn-outline" onclick="window.location.href='./faq.html'">F.A.Q</button>
+        <button class="btn btn-block btn-outline">Connect with a nurse now (24 Hrs)</button>
     </div>
-    <script type="text/javascript" src="./js/ratchet.js"></script>
+    <nav class="bar bar-tab">
+        <a class="tab-item active" data-ignore="push" href="../index.html"> <span class="icon icon-home"></span> <span class="tab-label">Home</span> </a>
+        <a class="tab-item" href="#"> <span class="icon icon-person"></span> <span class="tab-label">Profile</span> </a>
+        <a class="tab-item" href="#"> <span class="icon icon-star-filled"></span> <span class="tab-label">Favorites</span> </a>
+        <a class="tab-item" href="#"> <span class="icon icon-search"></span> <span class="tab-label">Search</span> </a>
+        <a class="tab-item" href="#"> <span class="icon icon-gear"></span> <span class="tab-label">Settings</span> </a>
+    </nav>
+    <script type="text/javascript" src="../js/ratchet.js"></script>
+    <script>
+        let data;
+        let buttons = document.getElementsByTagName("button");
+
+        if (!localStorage.getItem('hass0302')) {
+            console.log("no previous data");
+            data = {};
+        } else {
+            data = JSON.parse(localStorage.getItem('hass0302'));
+        }
+
+        let sum = 0;
+        for (keys in data) {
+            if (hasOwnProperty.call(data, keys)) {
+                console.log(keys);
+                sum += data[keys];
+            }
+        }
+        let msg = document.querySelector('.resultdisplay');
+        console.log(msg);
+
+        if (sum > 0) {
+            msg.textContent = "The results indicate that you might be in contact with chlamydia.";
+        } else {
+            msg.textContent = "You should be just fine.";
+        }
+
+    </script>
 </body>
 
 </html>

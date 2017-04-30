@@ -5,15 +5,15 @@
     <meta charset="UTF-8">
     <title>Document</title>
     <link rel="stylesheet" type="text/css" href="../css/ratchet.css">
+    <link rel="stylesheet" type="text/css" href="../css/question.css">
 
 </head>
 
 <body>
     <div class='content'>
         <header class="bar bar-nav">
-            <button class="btn btn-link btn-nav pull-left">
-                <span class="icon icon-left-nav"></span> Previous
-            </button>
+            <a class="btn btn-link btn-nav pull-left" onclick="window.location.href='questionnaire-q14.html'"> <span class="icon icon-left-nav"></span>Previous</a>
+
             <h1 class="title">Questionnaire</h1>
         </header>
 
@@ -26,9 +26,9 @@
                 <p>Do you think you might be a hypochondriac?</p>
             </div>
 
-            <button class="btn btn-block btn-primary">I'M NOT SURE</button>
-            <button class="btn btn-block btn-positive">YES</button>
-            <button class="btn btn-block btn-negative">NO</button>
+            <button class="btn btn-block btn-primary" value=0>I'M NOT SURE</button>
+            <button class="btn btn-block btn-positive" value=1>YES</button>
+            <button class="btn btn-block btn-negative" value=2>NO</button>
 
         </div>
         <nav class="bar bar-tab">

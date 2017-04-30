@@ -5,16 +5,15 @@
     <meta charset="UTF-8">
     <title>Document</title>
     <link rel="stylesheet" type="text/css" href="../css/ratchet.css">
+    <link rel="stylesheet" type="text/css" href="../css/question.css">
 
 </head>
 
 <body>
     <div class='content'>
         <header class="bar bar-nav">
-            <button class="btn btn-link btn-nav pull-left">
-                <span class="icon icon-left-nav"></span>
-                Previous
-            </button>
+            <a class="btn btn-link btn-nav pull-left" onclick="window.location.href='questionnaire-q13.html'"> <span class="icon icon-left-nav"></span>Previous</a>
+
             <h1 class="title">Questionnaire</h1>
         </header>
 
@@ -27,9 +26,9 @@
                 <p>Is you partner currently complaining about any signs or symptoms of an STI?</p>
             </div>
 
-            <button class="btn btn-block btn-primary">I DON'T KNOW</button>
-            <button class="btn btn-block btn-positive">NO</button>
-            <button class="btn btn-block btn-negative">YES</button>
+            <button class="btn btn-block btn-primary" value=0>I DON'T KNOW</button>
+            <button class="btn btn-block btn-positive" value=1>NO</button>
+            <button class="btn btn-block btn-negative" value=2>YES</button>
 
         </div>
         <nav class="bar bar-tab">
@@ -56,6 +55,28 @@
         </nav>
     </div>
     <script type="text/javascript" src="../js/ratchet.js"></script>
+    <script>
+        let data;
+        let buttons = document.getElementsByTagName("button");
+        for (let i = 0; i < buttons.length; i++) {
+            buttons[i].addEventListener("click", function() {
+                // localStorage.clear();
+                if (!localStorage.getItem('hass0302')) {
+                    console.log("no previous data");
+                    data = {};
+                } else {
+                    data = JSON.parse(localStorage.getItem('hass0302'));
+                }
+                let value = buttons[i].getAttribute('value');
+                console.log(value);
+                data.q14 = value;
+                console.dir(data);
+                localStorage.setItem('hass0302', JSON.stringify(data));
+                window.location.href = "questionnaire-q15.html";
+            });
+        };
+
+    </script>
 </body>
 
 </html>

@@ -5,15 +5,15 @@
     <meta charset="UTF-8">
     <title>Document</title>
     <link rel="stylesheet" type="text/css" href="../css/ratchet.css">
+    <link rel="stylesheet" type="text/css" href="../css/question.css">
 
 </head>
 
 <body>
     <div class='content'>
         <header class="bar bar-nav">
-            <button class="btn btn-link btn-nav pull-left">
-                <span class="icon icon-left-nav"></span> Previous
-            </button>
+            <a class="btn btn-link btn-nav pull-left" onclick="window.location.href='questionnaire-q1.html'"> <span class="icon icon-left-nav"></span>Previous</a>
+
             <h1 class="title">Questionnaire</h1>
         </header>
 
@@ -26,9 +26,9 @@
                 <p>Within the past 6 months, have you had more than one partner?</p>
             </div>
 
-            <button class="btn btn-block btn-primary">NOT APPLICABLE</button>
-            <button class="btn btn-block btn-positive">NO, ONLY ONE</button>
-            <button class="btn btn-block btn-negative">YES, MORE THAN ONE</button>
+            <button class="btn btn-block btn-primary" value=0>NOT APPLICABLE</button>
+            <button class="btn btn-block btn-positive" value=1>NO, ONLY ONE</button>
+            <button class="btn btn-block btn-negative" value=2>YES, MORE THAN ONE</button>
 
         </div>
         <nav class="bar bar-tab">
@@ -59,6 +59,7 @@
         let data;
         let buttons = document.getElementsByTagName("button");
         for (let i = 0; i < buttons.length; i++) {
+
             buttons[i].addEventListener("click", function() {
                 // localStorage.clear();
                 if (!localStorage.getItem('hass0302')) {

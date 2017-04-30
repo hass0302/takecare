@@ -5,15 +5,15 @@
     <meta charset="UTF-8">
     <title>Document</title>
     <link rel="stylesheet" type="text/css" href="../css/ratchet.css">
+    <link rel="stylesheet" type="text/css" href="../css/question.css">
 
 </head>
 
 <body>
     <div class='content'>
         <header class="bar bar-nav">
-            <button class="btn btn-link btn-nav pull-left">
-                <span class="icon icon-left-nav"></span> Previous
-            </button>
+            <a class="btn btn-link btn-nav pull-left" onclick="window.location.href='questionnaire-q12.html'"> <span class="icon icon-left-nav"></span>Previous</a>
+
             <h1 class="title">Questionnaire</h1>
         </header>
 
@@ -26,9 +26,9 @@
                 <p>Are you concerned about having an STD?</p>
             </div>
 
-            <button class="btn btn-block btn-primary">A LITTLE BIT</button>
-            <button class="btn btn-block btn-positive">NO</button>
-            <button class="btn btn-block btn-negative">YES</button>
+            <button class="btn btn-block btn-primary" value=0>A LITTLE BIT</button>
+            <button class="btn btn-block btn-positive" value=1>NO</button>
+            <button class="btn btn-block btn-negative" value=2>YES</button>
 
         </div>
         <nav class="bar bar-tab">

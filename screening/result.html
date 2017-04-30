@@ -9,14 +9,34 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <title>Questionnaire</title>
-    <link rel="stylesheet" type="text/css" href="../css/ratchet.css"> </head>
+    <link rel="stylesheet" type="text/css" href="../css/ratchet.css">
+    <link rel="stylesheet" type="text/css" href="../css/question.css">
+
+</head>
+<style>
+    .resultdisplay {
+        margin: 0;
+        width: 100%;
+        float: left;
+        padding-left: 23%;
+        padding-top: 40px;
+        font-size: 1.4rem;
+        background-color: gray;
+        color: aliceblue;
+        height: 100px;
+        margin-bottom: 50px;
+    }
+
+</style>
 
 <body>
     <header class="bar bar-nav">
-        <button class="btn btn-link btn-nav pull-left"> <span class="icon icon-left-nav"></span>Back</button>
         <h1 class="title">Questionnaire</h1> </header>
     <div class='content'>
-
+        <p class="resultdisplay"></p>
+        <button class="btn btn-block btn-outline">Find a Clinic</button>
+        <button class="btn btn-block btn-outline">F.A.Q</button>
+        <button class="btn btn-block btn-outline">Connect with a nurse now (24 Hrs)</button>
     </div>
     <nav class="bar bar-tab">
         <a class="tab-item active" data-ignore="push" href="../index.html"> <span class="icon icon-home"></span> <span class="tab-label">Home</span> </a>
@@ -36,7 +56,22 @@
         } else {
             data = JSON.parse(localStorage.getItem('hass0302'));
         }
-        console.dir(data);
+
+        let sum = 0;
+        for (keys in data) {
+            if (hasOwnProperty.call(data, keys)) {
+                console.log(keys);
+                sum += data[keys];
+            }
+        }
+        let msg = document.querySelector('.resultdisplay');
+        console.log(msg);
+
+        if (sum > 0) {
+            msg.textContent = "The results indicate that you might be in contact with chlamydia.";
+        } else {
+            msg.textContent = "You should be just fine.";
+        }
 
     </script>
 </body>

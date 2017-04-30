@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="./css/ratchet.css">
+</head>
+
+<body>
+    <header class="bar bar-nav">
+        <h1 class="title">Title</h1>
+    </header>
+    <div class='content'>
+
+        <ul class="table-view">
+            <li class="table-view-cell">Pregnancy Risk</li>
+            <li class="table-view-divider">Divider</li>
+            <li class="table-view-cell table-view-cell">STI Risk</li>
+            <li class="table-view-divider">Divider</li>
+            <li class="table-view-cell">Contraception Alert</li>
+            <li class="table-view-divider">Divider</li>
+
+        </ul>
+
+        <nav class="bar bar-tab">
+            <a class="tab-item" href="#">
+                <span class="icon icon-info"></span>
+                <span class="tab-label">Info</span>
+            </a>
+            <a class="tab-item" href="notes.html">
+                <span class="icon icon-compose"></span>
+                <span class="tab-label">Journal</span>
+            </a>
+            <a class="tab-item active" href="index.html">
+                <span class="icon icon-home"></span>
+                <span class="tab-label">Home</span>
+            </a>
+
+            <a class="tab-item" href="calendar.html">
+                <span class="icon icon-gear"></span>
+                <span class="tab-label">Calendar</span>
+            </a>
+            <a class="tab-item" href="#">
+                <span class="icon icon-person"></span>
+                <span class="tab-label">Connect</span>
+            </a>
+        </nav>
+    </div>
+    <script type="text/javascript" src="./js/ratchet.js"></script>
+</body>
+
+</html>

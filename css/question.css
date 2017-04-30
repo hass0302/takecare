@@ -1,0 +1,30 @@
+.content {
+    background-color: lightseagreen;
+}
+.btn {
+    float: left;
+    display: block;
+    width: 80%;
+    margin-left: 10%;
+    border-radius: 20px;
+    opacity: 0.5;
+    background-color: azure;
+    color: black;
+}
+a.btn.btn-link.btn-nav.pull-left {
+    float: left;
+    margin-left: -35%;
+    background-color: transparent;
+    border-radius: 0;
+    color: black;
+}
+div p {
+    font-size: 1.4rem;
+    color: white;
+    float: left;
+    margin: 10% 0 10% 12%;
+}
+h1 {
+    background-color: azure;
+    opacity: 0.8;
+}
